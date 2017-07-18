@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+body {
+    font-family: "Lucida Sans", Verdana, sans-serif;
+    margin:0px;
+}
+
+.preview{
+background-color:#F0F8FF;
+
+}
+
+.download {
+color:#377cad;
+
+}
+
+.main img {
+    width: 100%;
+}
+
+h1{
+    font-size: 1.625em;
+}
+
+h2{
+    font-size: 1.375em;
+}
+
+.header {
+
+    background-color: whitesmoke;
+ 
+}
+
+.menuitem {
+
+    margin-left: 0;
+    margin-top: -10;
+    padding: 4.310344827586206896551724137931%;
+  
+    cursor: pointer;
+}
+
+bs-vertical-wizard {
+    border-right: 1px solid #eaecf1;
+    padding-bottom: 50px;
+}
+
+.bs-vertical-wizard ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bs-vertical-wizard ul>li {
+    display: block;
+    position: relative;
+}
+
+.bs-vertical-wizard ul>li>a {
+    display: block;
+    padding: 10px 10px 10px 40px;
+    color: #333c4e;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: .8px;
+}
+
+.bs-vertical-wizard ul>li>a:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: calc(100% - 25px);
+    background-color: #bdc2ce;
+    left: 13px;
+    bottom: -9px;
+    z-index: 3;
+}
+
+.bs-vertical-wizard ul>li>a .ico {
+    pointer-events: none;
+    font-size: 14px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    z-index: 2;
+}
+
+.bs-vertical-wizard ul>li>a:after {
+    content: '';
+    position: absolute;
+    border: 2px solid #bdc2ce;
+    border-radius: 50%;
+    top: 14px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    z-index: 3;
+}
+
+.bs-vertical-wizard ul>li>a .desc {
+    display: block;
+    color: ;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: .8px;
+}
+
+.bs-vertical-wizard ul>li.complete>a:before {
+    background-color: #5cb85c;
+    opacity: 1;
+    height: calc(100% - 25px);
+    bottom: -9px;
+}
+
+.bs-vertical-wizard ul>li.complete>a:after {display:none;}
+.bs-vertical-wizard ul>li.locked>a:after {display:none;}
+.bs-vertical-wizard ul>li:last-child>a:before {display:none;}
+
+.bs-vertical-wizard ul>li.complete>a .ico {
+    left: 8px;
+}
+
+.bs-vertical-wizard ul>li>a .ico.ico-green {
+    color: #5cb85c;
+}
+
+.bs-vertical-wizard ul>li>a .ico.ico-muted {
+    color: #bdc2ce;
+}
+
+.bs-vertical-wizard ul>li.current {
+    background-color: #fff;
+}
+
+.bs-vertical-wizard ul>li.current>a:before {
+    background-color: #ccc;
+    opacity: 1;
+}
+
+.bs-vertical-wizard ul>li.current>a:after {
+    border-color: #ffe357;
+    background-color: #ffe357;
+    opacity: 1;
+}
+
+.bs-vertical-wizard ul>li.current:after, .bs-vertical-wizard ul>li.current:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.bs-vertical-wizard ul>li.current:after {
+    border-color: rgba(255,255,255,0);
+  
+    border-left-color: #fff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+.bs-vertical-wizard ul>li.current:before {
+    border-color: rgba(234,236,241,0);
+    border-left-color: #eaecf1;
+    border-width: 11px;
+    margin-top: -11px;
+}
+
+
+
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    
+}
+
+
+.footer {
+    padding: 1.0121457489878542510121457489879%;
+    text-align: center;
+    background-color: #f1f1f1;
+    border: 1px solid #e9e9e9;
+    font-size: 0.625em;
+}
+
+.gridcontainer {
+    width: 100%;
+}
+
+.gridwrapper {
+    overflow: hidden;
+}
+
+.gridbox {
+
+    margin-right: 2.0242914979757085020242914979757%;
+    float: left;
+}
+
+.gridheader {
+    width: 100%;
+}
+
+.gridmenu {
+    width: 15%;
+}
+
+.gridmain {
+    width: 80%;
+}
+
+
+.gridfooter {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    .gridmenu {
+        width: 100%;
+    }
+
+    .menuitem {
+        margin: 1.0121457489878542510121457489879%;
+
+    }
+
+    .gridmain {
+        width: 100%;
+    }
+
+    .main {
+    
+        padding: 1.0121457489878542510121457489879%;
+    }
+
+  
+
+    .gridbox {
+        margin-right: 0;
+        float: left;
+    }
+}
+
+
+
+.menuitem:hover{
+border-left:4px solid green;
+background-color:whitesmoke;
+}
+</style>
+</head>
+<body>
+<div class="gridcontainer" style="background-color:whitesmoke;">
+    <div class="gridwrapper">
+        <div class="gridbox gridheader" >
+            <div class="header" style="background-color:white;">
+             <table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="15%" style="background-color:#3cb1e6;padding:20px;"></td>
+    <td width="85%" style="background-color:#d8d8d8;padding:20px;"><span><b>35 Search Results</b> <span style="color:blak;">for "Preview"</span></td>
+  </tr>
+</table>
+            </div>
+        </div>
+        <div class="gridbox gridmenu" style="background-color:#353533">
+            <div class="menuitem" style="border-bottom:1px solid black;"><img src="1.png"/></div>
+            <div class="menuitem"style="border-bottom:1px solid black;" ><img src="2.png"/></div>
+            <div class="menuitem" style="border-bottom:1px solid black;"><img src="3.png"/></div>
+            <div class="menuitem" style="border-bottom:1px solid black;"><img src="4.png"/></div>
+             <div class="menuitem" style="border-bottom:1px solid black;"><img src="5.png"/></div>
+                 <div class="menuitem" style="border-bottom:1px solid black;background-color:whitesmoke;"><img src="6.png"/></div>
+                  
+        </div>
+        <div class="gridbox gridmain" style="background-color:whitesmoke;">
+            <div class="main" style="
+    padding-top: 30px;
+">
+
+<form>
+  <input type="text" name="search" placeholder="Preview" >
+</form>
+<div style="padding-top:20px;padding-bottom:20px;">
+  <input id="check1" type="checkbox" name="check" value="check1" checked >
+  <label for="check1">Todos</label>
+    <input id="check1" type="checkbox" name="check" value="check1" checked>
+  <label for="check1">Discussions</label>
+    <input id="check1" type="checkbox" name="check" value="check1" >
+  <label for="check1">Files</label>
+    <input id="check1" type="checkbox" name="check" value="check1" >
+  <label for="check1">Progress</label>
+    <input id="check1" type="checkbox" name="check" value="check1" >
+  <label for="check1">Team Members</label>
+</div>
+
+
+   <div class="bs-vertical-wizard" style="background-color:white;border:1px solid #cccccc;">
+                            <ul>
+                                <li class="current">
+                                
+                                <table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="10%" style="padding:20px;">
+    <img src="book.png" style="width:60px;height:60px;">
+    </td>
+    <td width="90%" style="font-size:10px"><span><b><span class="preview">Preview</span>_timeline_v1.jpg</b> 
+    <h5 style="color:grey;"> <span>By bharath</span></h5>
+    <a href="" class="download" >Download</a></td>
+  </tr>
+</table>
+                                    <a href="#"><i class="ico fa fa-check ico-green"></i>
+                                        <span class="desc"></span>
+                                    </a>
+                                </li>
+
+                                <li class="current prev-step">
+                 <table>
+                 <tr>
+                 <td>
+                 <table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="10%" style="padding:20px;">
+    <img src="book.png" style="width:60px;height:60px;">
+    </td>
+    <td width="90%" style="font-size:10px">
+    <img src="snap2.png" style="width:200px;height:200px;" />
+    <span><br/>
+    <b><span class="preview">Preview</span>_timeline_v1.jpg</b> 
+    <h5 style="color:grey;"><span>By bharath</span></h5>
+    <a class="download" href="" >Download</a>
+    
+    
+    
+    
+    </td>
+  </tr>
+</table>
+
+                                    
+                 </td>
+                 <td style="font-size:10px;">
+                 <img src="snap2.png" style="width:200px;height:200px;" />
+    <span><br/>
+    <b><span class="preview">Preview</span>_timeline_v1.jpg</b> 
+    <h5 style="color:grey;"><span>By bharath</span></h5>
+    <a href="" class="download" >Download</a>
+                 </td>
+                 </tr>
+                 </table>
+                                
+                                
+                                                         
+                                    <a href="#"> 
+                                        <span class="desc"></span>
+                                    </a>
+                                </li>
+                                <li class="current">
+                                                         <table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="10%" style="padding:20px;">
+    <img src="book.png" style="width:60px;height:60px;">
+    </td>
+    <td width="90%" style="font-size:10px">
+    <table>
+    <tr>
+    <td>    <img src="user.png" style="width:60px;height:60px;" />
+    </td>
+     <td>
+        <b><span class="preview">Preview</span>_timeline_v1.jpg</b>
+        <h5 style="color:grey;">I look the clean look of UI,but the issues I have</h5>
+    </td>
+    </tr>
+    </table>
+ 
+  
+    <h5 style="color:grey;"> <span>By bharath</h5>
+    </td>
+  </tr>
+</table>
+                                    <a href="#">
+                                        <span class="desc"></span>
+                                    </a>
+                                </li>
+                                <li class="current">
+                                                         <table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="10%" style="padding:20px;">
+    <img src="book.png" style="width:60px;height:60px;">
+    </td>
+    <td width="90%" style="font-size:10px"><span><b><span class="preview">Preview</span>_timeline_v1.jpg</b> 
+    <h5 style="color:grey;"><span>By bharath</span></h5>
+    <a class="download" href="" >Download</a></td>
+  </tr>
+</table>
+                                    <a href="#"><i class="ico fa fa-lock ico-muted"></i>
+                                        <span class="desc"></span>
+                                    </a>
+                                </li>
+                                <li class="current">
+                                                         <table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="10%" style="padding:20px;">
+    <img src="book.png" style="width:60px;height:60px;">
+    </td>
+    <td width="90%" style="font-size:10px"><span>
+    <h5 style="color:grey;margin-top:-10px;">praesent ornare,mauris volutpat ornare imperdiet,equre tortor
+condmentum urna,<br/>ut laoreet neque mauris in urna<br/>
+
+<strike>
+praesent ornare,mauris volutpat ornare imperdiet,equre tortor
+condmentum urna,
+</strike>
+
+Bharat /:</h5>
+    </td>
+  </tr>
+
+                                                        
+<table class="ex1" style="width:100%;" >
+  <tr>
+    <td width="10%">
+</td>
+    <td width="90%" style="font-size:10px"><span>
+    <h4 style="color:grey;margin-top:-10px;background-color:whitesmoke;padding:15px;text-align:center;cursor:pointer;">Show More<br/>
+</h5>
+    </td>
+  </tr>
+</table>
+                                    <a href="#"> <i class="ico fa fa-lock ico-muted"></i>
+                                        <span class="desc"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+            </div>
+        </div>
+     
+ 
+    </div>
+</div>
+</body>
+</html>
+
+
